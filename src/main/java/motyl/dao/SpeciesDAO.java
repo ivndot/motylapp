@@ -97,14 +97,12 @@ public class SpeciesDAO extends DataAccessObject {
 	/**
 	 * 
 	 * @param specie
-	 * @param img
 	 * @throws DAOInitializationException
 	 */
-	public void updateSpecie(SpeciesValueObject specie)
-			throws SQLException, DAOInitializationException {
+	public void updateSpecie(SpeciesValueObject specie) throws SQLException, DAOInitializationException {
 
 		PreparedStatement ps = null;
-		String sql  = "UPDATE especie SET " + "nombre_cientifico=?, nombre_comun=?, color_especie=?, tamano_especie=?, "
+		String sql = "UPDATE especie SET " + "nombre_cientifico=?, nombre_comun=?, color_especie=?, tamano_especie=?, "
 				+ "tipo_alimentacion=?, id_planta=? WHERE id_especie=?"; // query;
 
 		try {
@@ -230,18 +228,16 @@ public class SpeciesDAO extends DataAccessObject {
 
 	}
 
-	
 	/**
 	 * 
 	 * @param id
 	 * @throws DAOInitializationException
 	 */
-	public void deleteSpecie(int id)
-			throws SQLException, DAOInitializationException {
+	public void deleteSpecie(int id) throws SQLException, DAOInitializationException {
 
 		PreparedStatement ps = null;
-		
-		String sql  = "DELETE FROM especie WHERE id_especie=?"; // query;
+
+		String sql = "DELETE FROM especie WHERE id_especie=?"; // query;
 
 		try {
 

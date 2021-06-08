@@ -1,6 +1,7 @@
-package motyl.servlet.species;
+package motyl.servlet.plants;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,47 +10,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import motyl.dao.SpeciesDAO;
+import motyl.dao.PlantsDAO;
+import motyl.valueobject.PlantsValueObject;
 
 /**
- * Servlet implementation class DeleteSpeciesController
+ * Servlet implementation class Plants
  */
-@WebServlet("/delete_species.controller")
-public class DeleteSpeciesController extends HttpServlet {
+@WebServlet("/plants")
+public class Plants extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//id species
-		String id = request.getParameter("id");
-		
-		SpeciesDAO speciesdao = null;
+		PlantsDAO plantsdao = null;
 		
 		try {
-			//execute delete Specie
-			speciesdao = new SpeciesDAO();
-			speciesdao.deleteSpecie(Integer.parseInt(id));
+			//execute getAllSpecies from DAO
+			plantsdao = new PlantsDAO();
+			ArrayList<PlantsValueObject> plantsList = plantsdao.getAllPlants();
 
-			RequestDispatcher rd = request.getRequestDispatcher("species");
+			request.setAttribute("plantsList", plantsList);
+
+			RequestDispatcher rd = request.getRequestDispatcher("plants.jsp");
 			rd.forward(request, response);
 			
 		} catch (Exception e) {
 
-			request.setAttribute("deleteMessage", "No se puede eliminar este elemento");
-			
-			RequestDispatcher rd = request.getRequestDispatcher("species");
-			rd.forward(request, response);
-
 			e.printStackTrace();
 		}finally {
 			
-			if(speciesdao!=null) speciesdao.closeConnection(); // close conexion
+			if(plantsdao!=null) plantsdao.closeConnection(); // close conexion
 		}
-		
 	}
 
 	/**

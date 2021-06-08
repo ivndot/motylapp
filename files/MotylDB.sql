@@ -17,9 +17,9 @@ CREATE TABLE plantahospedera(
 /*ALTER TABLE plantahospedera ADD CONSTRAINT PKid_planta PRIMARY KEY (id_planta) AUTO_INCREMENT;*/
 
 INSERT INTO plantahospedera(nombre_planta, necesidad_luz, imagen_planta) 
-VALUES ('cashapona', 'sombra', '/images/planta1.jpg'); 
+VALUES ('alkushi', 'sombra', 'alkushi.jpg'); 
 INSERT INTO plantahospedera(nombre_planta, necesidad_luz, imagen_planta) 
-VALUES ('maní', 'luz directa', '/images/planta2.jpg'); 
+VALUES ('asclepias', 'luz directa', 'asclepias.jpg'); 
 
 
 DROP TABLE IF EXISTS especie;
@@ -41,6 +41,8 @@ ALTER TABLE especie ADD CONSTRAINT FK_id_planta FOREIGN KEY(id_planta) REFERENCE
 
 INSERT INTO especie(nombre_cientifico, nombre_comun, color_especie, tamano_especie, tipo_alimentacion, id_planta, imagen_especie) 
 VALUES ('morpho menelaus', 'morfo azul', 'azul', 'grande', 0, 1, 'morfo.jpg'); 
+INSERT INTO especie(nombre_cientifico, nombre_comun, color_especie, tamano_especie, tipo_alimentacion, id_planta, imagen_especie) 
+VALUES ('danaus plexippu', 'monarca', 'naranja', 'mediano', 0, 2, 'monarca.jpg'); 
 
 
 

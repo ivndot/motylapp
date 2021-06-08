@@ -88,7 +88,7 @@
 					<!--CHOOSE IMAGE-->
 					<label for="img" class="label-info">Selecciona una imagen</label> <input
 						type="file" name="img" class="input-img"
-						accept="image/png, image/jpg, image/jpeg">
+						accept="image/png, image/jpg, image/jpeg" required>
 					<!--BUTTON SUBMIT-->
 					<button class="btn btn-add-item" type="submit">Agregar</button>
 				</form>

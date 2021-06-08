@@ -52,6 +52,8 @@
 				<div class="species-container">
 
 					<%
+					//delete message error
+					String deleteMessage = (String) request.getAttribute("deleteMessage");
 					//get list of species
 					speciesList = (ArrayList<SpeciesValueObject>) request.getAttribute("speciesList");
 					//for each
@@ -111,6 +113,16 @@
 	</div>
 	<!--MODAL BOX-->
 	<%@ include file="modal_box.jsp"%>
+	<!--DELETE ERROR-->
+	<%
+	if (deleteMessage != null) {
+	%>
+	<script>alert("<%=deleteMessage%>
+		")
+	</script>
+	<%
+	}
+	%>
 	<!--JS-->
 	<script src="js/main.js"></script>
 </body>

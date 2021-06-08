@@ -1,4 +1,4 @@
-package motyl.servlet.species;
+package motyl.servlet.plants;
 
 import java.io.IOException;
 
@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import motyl.dao.SpeciesDAO;
+import motyl.dao.PlantsDAO;
 
 /**
- * Servlet implementation class DeleteSpeciesController
+ * Servlet implementation class DeletePlantsController
  */
-@WebServlet("/delete_species.controller")
-public class DeleteSpeciesController extends HttpServlet {
+@WebServlet("/delete_plants.controller")
+public class DeletePlantsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
@@ -24,31 +24,32 @@ public class DeleteSpeciesController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//id species
+		//id plant
 		String id = request.getParameter("id");
 		
-		SpeciesDAO speciesdao = null;
+		PlantsDAO plantsdao = null;
 		
 		try {
 			//execute delete Specie
-			speciesdao = new SpeciesDAO();
-			speciesdao.deleteSpecie(Integer.parseInt(id));
+			plantsdao = new PlantsDAO();
+			plantsdao.deletePlant(Integer.parseInt(id));
 
-			RequestDispatcher rd = request.getRequestDispatcher("species");
+			RequestDispatcher rd = request.getRequestDispatcher("plants");
 			rd.forward(request, response);
 			
 		} catch (Exception e) {
-
+			
 			request.setAttribute("deleteMessage", "No se puede eliminar este elemento");
 			
-			RequestDispatcher rd = request.getRequestDispatcher("species");
+			RequestDispatcher rd = request.getRequestDispatcher("plants");
 			rd.forward(request, response);
 
 			e.printStackTrace();
 		}finally {
 			
-			if(speciesdao!=null) speciesdao.closeConnection(); // close conexion
+			if(plantsdao!=null) plantsdao.closeConnection(); // close conexion
 		}
+
 		
 	}
 

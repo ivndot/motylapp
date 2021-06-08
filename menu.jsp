@@ -21,7 +21,7 @@
 				data-elements="">Especies</span>
 		</a></li>
 		<!--PLANTA-->
-		<li class="item"><a id="plant" href="./plants.jsp" class="itemhref"> <i
+		<li class="item"><a id="plant" href="./plants" class="itemhref"> <i
 				class="fas fa-seedling fa-2x iconmargin"></i> <span data-elements="">Plantas</span>
 		</a></li>
 		<!--FASES-->
