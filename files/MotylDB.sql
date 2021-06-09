@@ -64,6 +64,8 @@ ALTER TABLE fase_huevo ADD CONSTRAINT FKid_especie FOREIGN KEY(id_especie) REFER
 
 INSERT INTO fase_huevo(huevos_recolec, inicio_etapa, fin_etapa, dias_reales, larvas_finales, id_especie) 
 VALUES (400, '2021-01-04', '2021-01-14', 10, 398, 1); 
+INSERT INTO fase_huevo(huevos_recolec, inicio_etapa, fin_etapa, dias_reales, larvas_finales, id_especie) 
+VALUES (200, '2021-01-04', '2021-01-14', 10, 198, 2); 
 
 
 
@@ -125,6 +127,9 @@ VALUES (395, 316, 79, 1);
 /*
 SELECT especie.*, plantahospedera.nombre_planta FROM especie 
 INNER JOIN plantahospedera ON especie.id_planta=plantahospedera.id_planta;*/
+
+/*SELECT fase_huevo.*, especie.nombre_comun, especie.imagen_especie FROM fase_huevo 
+INNER JOIN especie ON fase_huevo.id_especie=especie.id_especie ORDER BY fase_huevo.id_lotehuevo ASC;*/
 
 /*SELECT especie.*, plantahospedera.nombre_planta FROM especie 
 INNER JOIN plantahospedera ON especie.id_planta=plantahospedera.id_planta 

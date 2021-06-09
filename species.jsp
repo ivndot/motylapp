@@ -117,9 +117,7 @@
 	<%
 	if (deleteMessage != null) {
 	%>
-	<script>alert("<%=deleteMessage%>
-		")
-	</script>
+	<script>alert('<%=deleteMessage%>')</script>
 	<%
 	}
 	%>

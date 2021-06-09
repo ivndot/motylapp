@@ -33,7 +33,7 @@
 		<!--SUBMENU-->
 		<div data-elements="" class="submenu collapse-phases">
 			<ul>
-				<li class="subitem"><a id="egg" class="subitemhref" href="./egg.jsp">Huevo</a></li>
+				<li class="subitem"><a id="egg" class="subitemhref" href="./egg-phase">Huevo</a></li>
 				<li class="subitem"><a id="larva" class="subitemhref" href="#">Larva</a></li>
 				<li class="subitem"><a id="pupa" class="subitemhref" href="#">Pupa</a></li>
 				<li class="subitem"><a id="adult" class="subitemhref" href="#">Adulto</a></li>
