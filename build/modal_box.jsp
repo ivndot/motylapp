@@ -3,7 +3,7 @@
 <!--MODAL BOX-->
 <div class="modal-box">
 	<div class="modal-content">
-		<h2>Atención</h2>
+		<h2>Atenc&oacute;n</h2>
 		<p>¿Est&aacute;s seguro de que deseas eliminar este elemento?</p>
 		<div class="modal-buttons">
 			<a href="#" class="btn btn-cancel">Cancelar</a> <a href="#"

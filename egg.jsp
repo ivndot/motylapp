@@ -70,7 +70,7 @@
 							//delete message error
 							String deleteMessage = (String) request.getAttribute("deleteMessage");
 
-							// get list of plants
+							// get list of eggs
 							eggPhaseList = (ArrayList<EggPhaseValueObject>) request.getAttribute("eggPhaseList");
 
 							//for each

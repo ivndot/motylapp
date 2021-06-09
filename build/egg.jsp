@@ -70,7 +70,7 @@
 							//delete message error
 							String deleteMessage = (String) request.getAttribute("deleteMessage");
 
-							// get list of plants
+							// get list of eggs
 							eggPhaseList = (ArrayList<EggPhaseValueObject>) request.getAttribute("eggPhaseList");
 
 							//for each
@@ -127,7 +127,7 @@
 	        <!--MODAL BOX-->
         <div class="modal-box">
             <div class="modal-content">
-                <h2>Atención</h2>
+                <h2>Atenci&oacute;n</h2>
                 <p>¿Est&aacute;s seguro de que deseas eliminar este elemento?</p>
                 <p>Se eliminar&aacute;n los registros en cascada</p>
                 <div class="modal-buttons">
