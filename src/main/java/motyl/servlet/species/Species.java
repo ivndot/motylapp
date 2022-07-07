@@ -28,29 +28,31 @@ public class Species extends HttpServlet {
 			throws ServletException, IOException {
 
 		SpeciesDAO speciesdao = null;
-		
+
 		try {
-			//execute getAllSpecies from DAO
+			// execute getAllSpecies from DAO
 			speciesdao = new SpeciesDAO();
 			ArrayList<SpeciesValueObject> speciesList = speciesdao.getAllSpecies();
 
 			request.setAttribute("speciesList", speciesList);
 
 			RequestDispatcher rd = request.getRequestDispatcher("species.jsp");
+			System.out.println("entro");
 			rd.forward(request, response);
-			
+
 		} catch (Exception e) {
 
 			e.printStackTrace();
-		}finally {
-			
-			if(speciesdao!=null) speciesdao.closeConnection(); // close conexion
+			System.out.println(e);
+		} finally {
+
+			if (speciesdao != null)
+				speciesdao.closeConnection(); // close conexion
 		}
 
 	}
-	
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException ,IOException {
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);
 	};
 

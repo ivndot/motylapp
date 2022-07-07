@@ -22,8 +22,8 @@ INSERT INTO plantahospedera(nombre_planta, necesidad_luz, imagen_planta)
 VALUES ('venenillo', 'semi-sombra', 'venenillo.jpg'); 
 INSERT INTO plantahospedera(nombre_planta, necesidad_luz, imagen_planta) 
 VALUES ('maracuyá', 'luz directa', 'maracuya.jpg'); 
-INSERT INTO plantahospedera(nombre_planta, necesidad_luz, imagen_planta) 
-VALUES ('mastuerzo', 'semi-sombra', 'mastuerzo.jpg'); 
+/*INSERT INTO plantahospedera(nombre_planta, necesidad_luz, imagen_planta) 
+VALUES ('mastuerzo', 'semi-sombra', 'mastuerzo.jpg'); */
 
 
 DROP TABLE IF EXISTS especie;
@@ -51,8 +51,8 @@ INSERT INTO especie(nombre_cientifico, nombre_comun, color_especie, tamano_espec
 VALUES ('dione juno', 'mariposa cartero', 'naranja rojizo', 'mediano', 1, 3, 'cartero.jpg');  
 INSERT INTO especie(nombre_cientifico, nombre_comun, color_especie, tamano_especie, tipo_alimentacion, id_planta, imagen_especie) 
 VALUES ('danaus sp.', 'falsa monarca', 'naranja', 'mediano', 1, 2, 'falsa_monarca.jpg'); 
-INSERT INTO especie(nombre_cientifico, nombre_comun, color_especie, tamano_especie, tipo_alimentacion, id_planta, imagen_especie) 
-VALUES ('leptophobia aripa', 'mariposa blanca', 'blanco', 'chico', 1, 4, 'blanca.jpg'); 
+/*INSERT INTO especie(nombre_cientifico, nombre_comun, color_especie, tamano_especie, tipo_alimentacion, id_planta, imagen_especie) 
+VALUES ('leptophobia aripa', 'mariposa blanca', 'blanco', 'chico', 1, 4, 'blanca.jpg'); */
 
 
 
@@ -156,4 +156,17 @@ INNER JOIN especie ON fase_huevo.id_especie=especie.id_especie ORDER BY fase_hue
 /*SELECT fase_larva.*, especie.nombre_comun, especie.imagen_especie
 FROM fase_larva INNER JOIN fase_huevo ON fase_larva.id_lotehuevo=fase_huevo.id_lotehuevo
 INNER JOIN especie ON fase_huevo.id_especie=especie.id_especie; */
+
+/*SELECT fase_pupa.*, especie.nombre_comun, especie.imagen_especie
+FROM fase_pupa INNER JOIN fase_larva ON fase_pupa.id_lotelarva=fase_larva.id_lotelarva
+INNER JOIN fase_huevo ON fase_larva.id_lotehuevo=fase_huevo.id_lotehuevo
+INNER JOIN especie ON fase_huevo.id_especie=especie.id_especie
+ORDER BY fase_pupa.id_lotepupa ASC;*/
+
+/*SELECT fase_adulto.*, especie.nombre_comun, especie.imagen_especie
+FROM fase_adulto INNER JOIN fase_pupa ON fase_adulto.id_lotepupa=fase_pupa.id_lotepupa
+INNER JOIN fase_larva ON fase_pupa.id_lotelarva=fase_larva.id_lotelarva
+INNER JOIN fase_huevo ON fase_larva.id_lotehuevo=fase_huevo.id_lotehuevo
+INNER JOIN especie ON fase_huevo.id_especie=especie.id_especie
+ORDER BY fase_adulto.id_loteadulto ASC;*/
 

@@ -35,8 +35,8 @@
 			<ul>
 				<li class="subitem"><a id="egg" class="subitemhref" href="./egg-phase">Huevo</a></li>
 				<li class="subitem"><a id="larva" class="subitemhref" href="./larva-phase">Larva</a></li>
-				<li class="subitem"><a id="pupa" class="subitemhref" href="#">Pupa</a></li>
-				<li class="subitem"><a id="adult" class="subitemhref" href="#">Adulto</a></li>
+				<li class="subitem"><a id="pupa" class="subitemhref" href="./pupa-phase">Pupa</a></li>
+				<li class="subitem"><a id="adult" class="subitemhref" href="./adult-phase">Adulto</a></li>
 			</ul>
 		</div>
 	</ul>
